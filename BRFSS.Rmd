@@ -1,0 +1,26 @@
+---
+title: "Summer Internship - BRFSS"
+author: Azfar Vahidy
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Loading needed packages
+```{r}
+library(foreign)
+library(dplyr)
+library(MASS)
+library(haven)
+```
+
+Loading in 2019 BRFFS Data
+```{r}
+BRFSS_data <- read_xpt(file.choose("LLCP2019.XPT"))
+```
+
+```{r}
+write.dta(BRFSS_data,"/Users/azfar/Desktop/SUMMER INTERNSHIP/brfss2019.dta")
+```
